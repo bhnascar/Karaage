@@ -1,0 +1,35 @@
+﻿Log file open, 03/04/15 03:19:58
+LogInit:Display: Running engine for game: Karaage
+LogInit: Version: 4.6.1-2386410+++depot+UE4-Releases+4.6
+LogInit: API Version: 2369412
+LogInit: Compiled (64-bit): Dec 11 2014 21:31:39
+LogInit: Compiled with Visual C++: 18.00.21005.01
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++depot+UE4-Releases+4.6
+LogInit: Command line:  /Temp/Autosaves/Game/StarterContent/UEDPCPrototypingMap -game -PIEVIACONSOLE -ResX=1280 -ResY=720  -Multiprocess 
+LogInit: Base directory: C:/Program Files/Epic Games/4.6/Engine/Binaries/Win64/
+LogInit: Rocket: 1
+[2015.03.04-11.19.58:572][  0]LogTaskGraph: Started task graph with 3 named threads and 6 total threads.
+[2015.03.04-11.19.58:624][  0]LogOnline:Warning: No default platform service specified for OnlineSubsystem
+[2015.03.04-11.19.58:640][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.03.04-11.19.58:648][  0]LogInit: Object subsystem initialized
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleRule = ShortestSide'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/bhnas_000/Documents/Unreal Projects/Karaage/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'UIScaleCurve = (EditorCurveData=(Keys=),ExternalCurve=None)'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/bhnas_000/Documents/Unreal Projects/Karaage/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'r.SeperateTranslucency = 0'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/bhnas_000/Documents/Unreal Projects/Karaage/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning: Skipping Unknown console variable: 'r.SSSSS = 0'
+[2015.03.04-11.19.58:650][  0]LogConsoleResponse:Warning:   Found in ini file 'C:/Users/bhnas_000/Documents/Unreal Projects/Karaage/Saved/Config/Windows/Engine.ini', in section '[/Script/Engine.RendererSettings]'
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.PostProcessAAQuality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.MSAA.CompositingSampleCount' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.MotionBlurQuality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.AmbientOcclusionLevels' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.DepthOfFieldQuality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.LensFlareQuality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.SceneColorFringeQuality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.BloomQuality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.FastBlurThreshold' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.MaxAnisotropy' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.SSR.Quality' wasn't set (Priority ProjectSetting < Scalability)
+[2015.03.04-11.19.58:650][  0]LogConsoleManager:Warning: Console variable 'r.TranslucencyV
