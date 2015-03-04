@@ -5,8 +5,9 @@ Prototype level editor built as a game level using Unreal Engine 4.
 
 ## Current supported functionality
 1. Add cube
-2. Select cube
-3. Deselect cube
+2. Select/Deselect cube
+3. Select/Deselect multiple cubes
+4. Delete cube
 4. Rotate (Local X/Y/Z)
 5. Translate (World X/Y/Z)
 6. Scale (Local X/Y/Z)
