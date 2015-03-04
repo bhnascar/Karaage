@@ -8,9 +8,10 @@ Prototype level editor built as a game level using Unreal Engine 4.
 2. Select/Deselect cube
 3. Select/Deselect multiple cubes
 4. Delete cube
-4. Rotate (Local X/Y/Z)
-5. Translate (World X/Y/Z)
-6. Scale (Local X/Y/Z)
+5. Display local orientation (axes) of cube
+6. Rotate (Local X/Y/Z)
+7. Translate (World X/Y/Z)
+8. Scale (Local X/Y/Z)
 
 ## Goals
 1. Recreate minimal editor functionality (enough for simple level design)
