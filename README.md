@@ -13,7 +13,7 @@ Prototype level editor built as a game level using Unreal Engine 4.
 7. Translate (World X/Y/Z)
 8. Scale (Local X/Y/Z)
 
-Editor actions are currently triggered by keyboard shortcuts. We are looking into adding alternative input by having other input devices simply fire off the corresponding keyboard events. Eventually we will want more native integration, but this may be adequate for the purposes of prototyping.
+Editor actions are currently triggered by a combination of mouse actions and keyboard shortcuts. We are looking into adding alternative input by having other input devices simply fire off the corresponding keyboard and mouse events. Eventually we will want more native integration, but this may be adequate for the purposes of prototyping.
 
 ## Goals
 1. Recreate minimal editor functionality (enough for simple level design)
