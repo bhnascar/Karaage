@@ -19,4 +19,5 @@ Editor actions are currently triggered by a combination of mouse actions and key
 ## Goals
 1. Recreate minimal editor functionality (enough for simple level design)
 2. Integrate 3DConnexion Space Navigator support to test level design workflow with said device
-3. Integrate Novint Falcon support and test level design workflow with said device
+3. Integrate Novint Falcon support and test level design workflow
+4. Integrate mobile device object-manipulation support and test level design workflow
