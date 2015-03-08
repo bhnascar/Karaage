@@ -1,0 +1,56 @@
+<% @title = "[カラアゲ] Karaage Updates Mailing List" %>
+
+<div class="container">
+  <h1>Interested in previewing the Karaage editor?</h1>
+  <p>Talking with people who have experience in developing with Unreal Engine and virtual reality would truly help us as we iterate over designs for the Karaage editor. If you would like to test the editor and give us feedback, please sign up for updates below - we will send you biweekly updates as well as new builds as we progress!</p>
+  <% if @tester.errors.any? %>
+    <div class="alert alert-danger">
+      <p class="lead">Whoops! Something happened!</p>
+      <% @tester.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <%= form_for :tester, method: :post, url: {action: :post_mailing}, html: {class: "form-horizontal", role: "form"} do |f| %>
+    <fieldset>
+      <legend>Keep in contact!</legend>
+    </fieldset>
+    <div class="form-group">
+      <label for="inputTesterFirstName" class="col-sm-3 control-label">First Name</label>
+      <div class="col-sm-9">
+        <%= f.text_field :tester_first_name, class: "form-control", id: "inputTesterFirstName", placeholder: "John" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTesterLastName" class="col-sm-3 control-label">Last Name</label>
+      <div class="col-sm-9">
+        <%= f.text_field :tester_last_name, class: "form-control", id: "inputTesterLastName", placeholder: "Doe" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTesterEmail" class="col-sm-3 control-label">E-mail Address</label>
+      <div class="col-sm-9">
+        <%= f.text_field :tester_email, class: "form-control", id: "inputTesterEmail", placeholder: "jdoe@email.website" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTesterOrg" class="col-sm-3 control-label">Organization <small>Optional</small></label>
+      <div class="col-sm-9">
+        <%= f.text_field :tester_organization, class: "form-control", id: "inputTesterOrg", placeholder: "Doe Simulations Inc." %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputTesterRole" class="col-sm-3 control-label">Role (e.g. SWE, Level designer) <small>Optional</small></label>
+      <div class="col-sm-9">
+        <%= f.text_field :tester_role, class: "form-control", id: "inputTesterRole", placeholder: "Game developer" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  <h1>Game development and VR survey</h1>
+  <p>If you would like to help give us information about how you develop games or design levels, we would really appreciate it if you filled out our quick <%= link_to 'two minute survey', 'https://docs.google.com/forms/d/1H7wNmt0OOqPoQoxiJBjlsQzPxFPdJD8ZowVFxU7338w/viewform' %>! Thank you so much!</p>
+</div>
