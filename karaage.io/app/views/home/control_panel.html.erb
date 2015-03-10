@@ -5,6 +5,13 @@
   <div class="row">
     <div class="col-sm-5">
       <h2>New post</h2>
+      <% if @post.errors.any? %>
+        <div class="alert alert-danger">
+          <% @post.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+          <% end %>
+        </div>
+      <% end %>
       <%= form_for :post, method: :post, url: {action: :post_post}, html: {class: "form-horizontal", role: "form"} do |f| %>
         <div class="form-group">
           <label for="input-post-title" class="col-sm-2 control-label">Title</label>
@@ -27,7 +34,7 @@
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
             <div class="checkbox">
-              <%= f.check_box :post_is_published, checked: false, id: "input-published", value: 1 %>Publish now!
+              <%= f.check_box :post_is_published, checked: true, id: "input-published", value: 1 %>Publish now!
             </div>
           </div>
         </div>

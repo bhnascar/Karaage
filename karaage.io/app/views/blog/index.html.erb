@@ -2,17 +2,34 @@
 <div class="container">
   <h1 id="home-level-editing-header">Developer's Blog</h1>
   <p>Here is where all the magic happens. Updates about what we are doing appear here!</p>
-  <% @allPosts.each do |post| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= link_to post.post_title, action: 'view', id: post.id %></h3>
-      </div>
-      <div class="panel-body">
-        <%= post.post_content.html_safe %>
-      </div>
-      <div class="panel-footer">
-        Posted by <%= post.user.user_first_name %> <em> at <%= post.post_date.strftime("%Y-%m-%d") %> 
-      </div>
+  <div class="row">
+    <div class="col-sm-10">
+      <% @allPosts.each do |post| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= link_to post.post_title, action: 'view', id: post.id %></h3>
+          </div>
+          <div class="panel-body">
+            <%= post.post_content.html_safe %>
+          </div>
+          <div class="panel-footer">
+            Posted by <%= post.user.user_first_name %> <em> at <%= post.post_date.strftime("%Y-%m-%d") %></em> 
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="col-sm-2">
+      <h3>Activity</h3>
+      <dl>
+        <% @months.sort.each do |month, posts| %>
+          <dt><%= month.strftime("%B") %> (<%= posts.count %>)</dt>
+          <dd>
+            <% posts.each do |post| %>
+              <p><%= link_to post.post_title, action: 'view', id: post.id %></p>
+            <% end %>
+          </dd>
+        <% end %>
+      </dd>
+    </div>
+  </div>
 </div>

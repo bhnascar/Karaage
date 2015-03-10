@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306114216) do
+ActiveRecord::Schema.define(version: 20150310034055) do
+
+  create_table "posts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "post_date"
+    t.string   "post_title"
+    t.string   "post_content"
+    t.integer  "post_is_published"
+    t.integer  "user_id"
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "tags", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tag_string"
+    t.integer  "post_id"
+  end
+
+  add_index "tags", ["post_id"], name: "index_tags_on_post_id"
 
   create_table "testers", force: true do |t|
     t.datetime "created_at"

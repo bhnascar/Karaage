@@ -1,0 +1,20 @@
+<% @title = "[カラアゲ] Karaage | User Account Panel" %>
+<div class="container">
+  <h1>Control panel</h1>
+  <%= render partial: "shared/control", locals: {tab: 2} %>
+  <h2>User account information</h2>
+  <%= form_for @user, method: :post, url: {action: :edit_user}, html: {class: "form-horizontal", role: "form"} do |f| %>
+    <div class="form-group">
+      <label for="inputUserFirstName" class="col-sm-3 control-label">First name</label>
+      <div class="col-sm-9">
+        <%= f.text_field :user_first_name, class: "form-control", id: "inputUserFirstName", placeholder: "John" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputUserLastName" class="col-sm-3 control-label">Last name</label>
+      <div class="col-sm-9">
+        <%= f.text_field :user_last_name, class: "form-control", id: "inputUserLastName", placeholder: "Doe" %>
+      </div>
+    </div>
+  <% end %>
+</div>

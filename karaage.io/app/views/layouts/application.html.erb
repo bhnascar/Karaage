@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-  <%= render partial: "shared/nav" %>
+  <%= render partial: "shared/nav", locals: {currentUser: @current_user} %>
   <%= yield %>
   <%= render partial: "shared/footer" %>
 

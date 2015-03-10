@@ -1,19 +1,15 @@
 class HomeController < ApplicationController
 	def index
-
+    @current_user = User.find_by_id session[:current_user_id]
 	end
 
-  def about
-
-  end
-
   def cow
-
+    @current_user = User.find_by_id session[:current_user_id]
   end
 
   def contact
+    @current_user = User.find_by_id session[:current_user_id]
     @tester = Tester.new
-
   end
 
   def post_mailing
@@ -63,8 +59,8 @@ class HomeController < ApplicationController
       return
     end
 
-    current_user = User.find_by_id session[:current_user_id]
-    if current_user.user_email != session[:current_user_email]
+    @current_user = User.find_by_id session[:current_user_id]
+    if @current_user.user_email != session[:current_user_email]
       reset_session
       redirect_to action: "index"
       return
@@ -97,6 +93,9 @@ class HomeController < ApplicationController
     if @post.save
       redirect_to action: "control_panel"
     else
+      @timeNow = Time.now
+      @timeNow = @timeNow.strftime("%Y-%m-%d")
+      @allPosts = Post.all
       render action: "control_panel"
     end
   end
@@ -107,8 +106,8 @@ class HomeController < ApplicationController
       return
     end
 
-    current_user = User.find_by_id session[:current_user_id]
-    if current_user.user_email != session[:current_user_email]
+    @current_user = User.find_by_id session[:current_user_id]
+    if @current_user.user_email != session[:current_user_email]
       reset_session
       redirect_to action: "index"
       return
@@ -144,7 +143,7 @@ class HomeController < ApplicationController
 
     @post.post_date = DateTime.strptime(edit_post.post_time, "%Y-%m-%d")
     @post.user = User.find_by_id session[:current_user_id]
-    @post.post_content = ActionController::Base.helpers.sanitize(edit_post.post_content, tags: %w(h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table th tr td img), attributes: %w(class))
+    @post.post_content = ActionController::Base.helpers.sanitize(edit_post.post_content, tags: %w(a br div h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table th tr td img), attributes: %w(class src href))
 
     if @post.save
       redirect_to action: "control_panel"
@@ -171,14 +170,40 @@ class HomeController < ApplicationController
       redirect_to action: "control_panel"
       return
     end
-    
+
     Post.destroy params[:id]
 
     redirect_to action: "control_panel"
   end
 
   def user_control_panel
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    @current_user = User.find_by_id session[:current_user_id]
+    if @current_user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
     @allTesters = Tester.all
+  end
+
+  def user_admin
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    @user = User.find_by_id session[:current_user_id]
+    if @user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
   end
 
   def logout
