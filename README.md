@@ -7,15 +7,20 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 
 ### Current supported functionality
 1. Add cube
-2. Select/Deselect cube by line trace from player viewpoint
-3. Select/Deselect cube by cursor overlap 
-4. Select/Deselect multiple cubes
-5. Delete cube
-6. Display local orientation (axes) of cube
-7. Rotate (Local X/Y/Z)
-8. Translate (World X/Y/Z)
-9. Scale (Local X/Y/Z)
-10. 3D cursor (Moves left/right/forward/backward/up/down)
+  1. By player position
+  2. By cursor position
+  3. By trigger point
+2. Select/Deselect cube
+  1. By line trace from player viewpoint
+  2. By line trace through cursor
+  3. By cursor overlap
+3. Select/Deselect multiple cubes
+4. Delete cube
+5. Display local orientation (axes) of cube
+6. Rotate (Local X/Y/Z)
+7. Translate (World X/Y/Z)
+8. Scale (Local X/Y/Z)
+9. 3D cursor (Moves left/right/forward/backward/up/down)
 
 Editor actions are currently triggered by a combination of mouse actions and keyboard shortcuts. We are looking into adding alternative input by having other input devices simply fire off the corresponding keyboard and mouse events. Eventually we will want more native integration, but this may be adequate for the purposes of prototyping.
 
