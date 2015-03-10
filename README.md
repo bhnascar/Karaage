@@ -20,7 +20,8 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 6. Rotate (Local X/Y/Z)
 7. Translate (World X/Y/Z)
 8. Scale (Local X/Y/Z)
-9. 3D cursor (Moves left/right/forward/backward/up/down)
+9. Drop-to-ground
+10. 3D cursor (Moves left/right/forward/backward/up/down)
 
 Editor actions are currently triggered by a combination of mouse actions and keyboard shortcuts. We are looking into adding alternative input by having other input devices simply fire off the corresponding keyboard and mouse events. Eventually we will want more native integration, but this may be adequate for the purposes of prototyping.
 
