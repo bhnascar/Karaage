@@ -3,12 +3,16 @@ class HomeController < ApplicationController
 
 	end
 
-  def mailing
-    @tester = Tester.new
+  def about
 
   end
 
   def cow
+
+  end
+
+  def contact
+    @tester = Tester.new
 
   end
 
@@ -54,6 +58,126 @@ class HomeController < ApplicationController
   end
 
   def control_panel
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    current_user = User.find_by_id session[:current_user_id]
+    if current_user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    @timeNow = Time.now
+    @timeNow = @timeNow.strftime("%Y-%m-%d")
+    @allPosts = Post.all
+    @post = Post.new
+  end
+
+  def post_post
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    current_user = User.find_by_id session[:current_user_id]
+    if current_user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    @post = Post.new(post_params)
+    @post.post_date = DateTime.strptime(@post.post_time, "%Y-%m-%d")
+    @post.user = User.find_by_id session[:current_user_id]
+    @post.post_content = ActionController::Base.helpers.sanitize(@post.post_content, tags: %w(h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table tr td img), attributes: %w(class))
+
+    if @post.save
+      redirect_to action: "control_panel"
+    else
+      render action: "control_panel"
+    end
+  end
+
+  def view_post
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    current_user = User.find_by_id session[:current_user_id]
+    if current_user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    @post = Post.find_by_id params[:id]
+    if not @post
+      redirect_to action: "control_panel"
+    end
+
+    @timeNow = @post.post_date.strftime("%Y-%m-%d")
+  end
+
+  def edit_post
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    current_user = User.find_by_id session[:current_user_id]
+    if current_user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    edit_post = Post.new(post_params)
+    @post = Post.find_by_id params[:id]
+    if not @post
+      redirect_to action: "control_panel"
+      return
+    end
+
+    @post.post_date = DateTime.strptime(edit_post.post_time, "%Y-%m-%d")
+    @post.user = User.find_by_id session[:current_user_id]
+    @post.post_content = ActionController::Base.helpers.sanitize(edit_post.post_content, tags: %w(h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table th tr td img), attributes: %w(class))
+
+    if @post.save
+      redirect_to action: "control_panel"
+    else
+      render action: "control_panel"
+    end
+  end
+
+  def delete_post
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    current_user = User.find_by_id session[:current_user_id]
+    if current_user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    @post = Post.find_by_id params[:id]
+    if not @post
+      redirect_to action: "control_panel"
+      return
+    end
+    
+    Post.destroy params[:id]
+
+    redirect_to action: "control_panel"
+  end
+
+  def user_control_panel
     @allTesters = Tester.all
   end
 
@@ -74,5 +198,9 @@ class HomeController < ApplicationController
 
   def user_login_params
     return params.require(:user).permit(:user_email, :user_password)
+  end
+
+  def post_params
+    return params.require(:post).permit(:post_time, :post_title, :post_content, :post_is_published)
   end
 end

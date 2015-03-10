@@ -1,9 +1,9 @@
-<% @title = "[カラアゲ] Karaage Home" %>
+<% @title = "[カラアゲ] Karaage | Home" %>
 <div class="jumbotron cover-photo">
   <div class="dark-container">
     <h1>Karaage: the immersive editor</h1>
     <p>Taking level editing to another dimension.</p>
-    <p><%= link_to 'Sign up for updates', {action: 'mailing'}, class: 'btn btn-primary btn-lg', role: 'button'%></p>
+    <p><%= link_to 'Sign up for updates', {action: 'contact'}, class: 'btn btn-primary btn-lg', role: 'button'%></p>
   </div>
 </div>
 <div class="container">
@@ -12,20 +12,27 @@
     <div class="col-sm-4">
       <p class="text-center"><%= image_tag "icons/Hammer.png", class: "img-responsive img-80", alt: "Build icon"%></p>
       <h2 class="text-center">Build while in virtual reality</h2>
-      <p class="text-center">Experiencing the world that you build is an exhilarating experience. Why limit yourself to a standard display when you can dive in with the Oculus Rift?</p>
+      <p class="text-center lead">Experiencing the world that you build is an exhilarating experience. Why limit yourself to a standard display when you can dive in with the Oculus Rift?</p>
     </div>
     <div class="col-sm-4">
       <p class="text-center"><%= image_tag "icons/GameController.png", class: "img-responsive img-80", alt: "Build icon"%></p>
       <h2 class="text-center">Playtest and fine-tune seamlessly</h2>
-      <p class="text-center">Found a problem while running through a level? Save time by fixing it immediately without exiting with Karaage.</p>
+      <p class="text-center lead">Found a problem while running through a level? Save time by fixing it immediately without exiting with Karaage.</p>
     </div>
     <div class="col-sm-4">
       <p class="text-center"><%= image_tag "icons/Unreal.png", class: "img-responsive img-80", alt: "Build icon"%></p>
       <h2 class="text-center">Integrated with the Unreal Engine</h2>
-      <p class="text-center">Load and save levels for further tweaking in the Unreal Engine level editor. It's that easy.</p>
+      <p class="text-center lead">Load and save levels for further tweaking in the Unreal Engine level editor. It's that easy.</p>
     </div>
   </div>
-  <p class="lead">Game design traditionally are limited to the standard workstation and a 2D monitor. However, this makes development tedious when it involves virtual reality &mdash; putting on and taking off the headset multiple times over the span of an hour to check object placement wears on the user really quickly. Karaage aims to make greyboxing simple by allowing you to add and manipulate actors in a world while wearing the VR headset.</p>
+</div>
+<div class="jumbotron jumbotron-text-background jumbotron-about-background">
+  <div class="jumbotron-text">
+    <h1>What we do</h1>
+    <p class="lead">Game design traditionally are limited to the standard workstation and a 2D monitor. However, this makes development tedious when it involves virtual reality &mdash; putting on and taking off the headset multiple times over the span of an hour to check object placement wears on the user really quickly. Karaage aims to make greyboxing simple by allowing you to add and manipulate actors in a world while wearing the VR headset.</p>
+  </div>
+</div>
+<div class="container">
   <h1>Sign up to be notified of alpha builds</h1>
-  <p class="lead">We are still in the early phases of development, but we are planning to release test builds for feedback in the coming weeks. If you would like to help us test and give feedback on Karaage, please sign up for our <%= link_to 'mailing list', action: 'mailing'%>.</p>
+  <p class="lead">We are still in the early phases of development, but we are planning to release test builds for feedback in the coming weeks. If you would like to help us test and give feedback on Karaage, please sign up to be notified when <%= link_to 'previews come out', action: 'contact'%>.</p>
 </div>

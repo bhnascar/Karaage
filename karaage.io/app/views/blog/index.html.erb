@@ -1,0 +1,18 @@
+<% @title = "[カラアゲ] Karaage | Blog" %>
+<div class="container">
+  <h1 id="home-level-editing-header">Developer's Blog</h1>
+  <p>Here is where all the magic happens. Updates about what we are doing appear here!</p>
+  <% @allPosts.each do |post| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= link_to post.post_title, action: 'view', id: post.id %></h3>
+      </div>
+      <div class="panel-body">
+        <%= post.post_content.html_safe %>
+      </div>
+      <div class="panel-footer">
+        Posted by <%= post.user.user_first_name %> <em> at <%= post.post_date.strftime("%Y-%m-%d") %> 
+      </div>
+    </div>
+  <% end %>
+</div>

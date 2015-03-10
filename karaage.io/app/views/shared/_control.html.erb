@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs">
+  <li <% if tab == 0 %> class="active" <% end %>><%= link_to 'Blog', action: 'control_panel'%></li>
+  <li <% if tab == 1 %> class="active" <% end %>><%= link_to 'Users', action: 'user_control_panel'%></li>
+  <li><%= link_to 'Log out', action: 'logout' %></li>
+</ul>

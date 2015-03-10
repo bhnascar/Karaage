@@ -11,6 +11,31 @@ body {
 	padding-right: 0px;
 	background-position: center;
 }
+.jumbotron.jumbotron-text-background {
+	padding-top:0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	background-position: center;
+}
+.jumbotron-text {
+	height: 100%;
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-top: 350px;
+	padding-bottom: 60px;
+	background-color: rgba(0,0,0,0.4);
+	color:#fff;
+}
+.jumbotron-text h1 {
+	font-size: 36px;
+}
+.jumbotron-text .lead {
+	font-size: 16px;
+}
+.jumbotron-text-background.jumbotron-about-background {
+	background-image: url(<%= asset_data_uri 'cover/about_background.jpg' %>);
+}
 .dark-container {
 	margin-left: 0;
 	margin-right: 0;
@@ -53,5 +78,15 @@ h6 {
 @media (min-width: 1600px) {
   .container {
     width: 1570px;
+  }
+}
+@media (min-width: 1200px) {
+  .jumbotron.jumbotron-about-background {
+  	padding-left: 40%;
+  }
+}
+@media (min-width: 768px) {
+  .jumbotron-text .lead {
+    font-size: 21px;
   }
 }

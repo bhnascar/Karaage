@@ -1,0 +1,7 @@
+<% @title = "[カラアゲ] Karaage | " + @post.post_title %>
+<div class="container">
+  <h1 id="home-level-editing-header"><%= @post.post_title %></h1>
+  <%= @post.post_content.html_safe %>
+  <hr />
+  Posted by <%= @post.user.user_first_name %> <em> at <%= @post.post_date.strftime("%Y-%m-%d") %> 
+</div>
