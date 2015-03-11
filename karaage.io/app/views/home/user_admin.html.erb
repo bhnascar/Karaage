@@ -2,7 +2,24 @@
 <div class="container">
   <h1>Control panel</h1>
   <%= render partial: "shared/control", locals: {tab: 2} %>
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <p><%= flash[:success] %></p>
+    </div>
+  <% end %>
+  <% if flash[:error] %>
+    <div class="alert alert-danger">
+      <p><%= flash[:error] %></p>
+    </div>
+  <% end %>
   <h2>User account information</h2>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
   <%= form_for @user, method: :post, url: {action: :edit_user}, html: {class: "form-horizontal", role: "form"} do |f| %>
     <div class="form-group">
       <label for="inputUserFirstName" class="col-sm-3 control-label">First name</label>
@@ -16,5 +33,111 @@
         <%= f.text_field :user_last_name, class: "form-control", id: "inputUserLastName", placeholder: "Doe" %>
       </div>
     </div>
+    <div class="form-group">
+      <label for="inputUserOrg" class="col-sm-3 control-label">Organization</label>
+      <div class="col-sm-9">
+        <%= f.text_field :user_organization, class: "form-control", id: "inputUserOrg", placeholder: "Stanford University" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputUserBio" class="col-sm-3 control-label">About</label>
+      <div class="col-sm-9">
+        <%= f.text_area :user_bio, class: "form-control", id: "inputUserBio", placeholder: "Some text about yourself!", rows:5 %>
+      </div>
+    </div>
+    <fieldset>
+      <legend>Please enter password to confirm changes</legend>
+    </fieldset>
+    <div class="form-group">
+      <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+      <div class="col-sm-9">
+        <%= f.password_field :user_password, class: "form-control", id: "inputPassword", placeholder: "Password" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  <h2>Change password</h2>
+  <% if @passUser.errors.any? %>
+    <div class="alert alert-danger">
+      <% @passUser.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <%= form_for :user, method: :post, url: {action: :change_password}, html: {class: "form-horizontal", role: "form"} do |f| %>
+    <div class="form-group">
+      <label for="inputOldPassword" class="col-sm-3 control-label">Old password</label>
+      <div class="col-sm-9">
+        <%= f.password_field :user_password, class: "form-control", id: "inputOldPassword", placeholder: "Old password" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputUserNewPassword" class="col-sm-3 control-label">New password</label>
+      <div class="col-sm-9">
+        <%= f.password_field :user_new_password, class: "form-control", id: "inputUserNewPassword", placeholder: "New password" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @current_user.user_privileges == 1 %>
+    <h2>Add user</h2>
+    <%= form_for @user, method: :post, url: {action: :new_user}, html: {class: "form-horizontal", role: "form"} do |f| %>
+      <div class="form-group">
+        <label for="inputUserFirstName" class="col-sm-3 control-label">First name</label>
+        <div class="col-sm-9">
+          <%= f.text_field :user_first_name, class: "form-control", id: "inputUserFirstName", placeholder: "John" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputUserLastName" class="col-sm-3 control-label">Last name</label>
+        <div class="col-sm-9">
+          <%= f.text_field :user_last_name, class: "form-control", id: "inputUserLastName", placeholder: "Doe" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputUserEmail" class="col-sm-3 control-label">E-mail</label>
+        <div class="col-sm-9">
+          <%= f.text_field :user_email, class: "form-control", id: "inputUserEmail", placeholder: "karaage@karaage.iio" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputUserOrg" class="col-sm-3 control-label">Organization</label>
+        <div class="col-sm-9">
+          <%= f.text_field :user_organization, class: "form-control", id: "inputUserOrg", placeholder: "Stanford University" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputUserBio" class="col-sm-3 control-label">About</label>
+        <div class="col-sm-9">
+          <%= f.text_area :user_bio, class: "form-control", id: "inputUserBio", placeholder: "Some text about yourself!", rows:5 %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-9">
+          <%= f.password_field :user_password, class: "form-control", id: "inputPassword", placeholder: "Password" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputProfile" class="col-sm-3 control-label">User Profile URL</label>
+        <div class="col-sm-9">
+          <%= f.text_field :user_profile_url, class: "form-control", id: "inputProfile", placeholder: "URL" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= submit_tag "Submit", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -91,6 +91,7 @@ class HomeController < ApplicationController
     @post.post_content = ActionController::Base.helpers.sanitize(@post.post_content, tags: %w(h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table tr td img), attributes: %w(class))
 
     if @post.save
+      flash[:success] = "Post saved."
       redirect_to action: "control_panel"
     else
       @timeNow = Time.now
@@ -144,11 +145,13 @@ class HomeController < ApplicationController
     @post.post_date = DateTime.strptime(edit_post.post_time, "%Y-%m-%d")
     @post.user = User.find_by_id session[:current_user_id]
     @post.post_content = ActionController::Base.helpers.sanitize(edit_post.post_content, tags: %w(a br div h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table th tr td img), attributes: %w(class src href))
+    @post.post_is_published = edit_post.post_is_published
 
     if @post.save
+      flash[:success] = "Post edited."
       redirect_to action: "control_panel"
     else
-      render action: "control_panel"
+      render action: "edit_post"
     end
   end
 
@@ -172,7 +175,7 @@ class HomeController < ApplicationController
     end
 
     Post.destroy params[:id]
-
+    flash[:success] = "Post deleted."
     redirect_to action: "control_panel"
   end
 
@@ -199,11 +202,106 @@ class HomeController < ApplicationController
     end
 
     @user = User.find_by_id session[:current_user_id]
+    @current_user = @user
     if @user.user_email != session[:current_user_email]
       reset_session
       redirect_to action: "index"
       return
     end
+    @passUser = User.new
+  end
+
+  def edit_user
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    @user = User.find_by_id session[:current_user_id]
+    if @user.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    edit = User.new(user_edit_params)
+    if @user.password_valid?(edit.user_password)
+      @user.user_first_name = edit.user_first_name
+      @user.user_last_name = edit.user_last_name
+      @user.user_bio = edit.user_bio
+      @user.user_organization = edit.user_organization
+      @user.user_password = edit.user_password
+      if @user.save
+        flash[:success] = "User information changed."
+        redirect_to action: "user_admin"
+        return
+      else
+        @passUser = User.new
+        render action: "user_admin"
+        return
+      end
+    end
+    flash[:error] = "Password is incorrect."
+    render action: "user_admin"
+  end
+
+  def new_user
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+
+    @current_user = User.find_by_id session[:current_user_id]
+    if @current_user.user_email != session[:current_user_email] || @current_user.user_privileges != 1
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    @newUser = User.new(user_new_params)
+    @newUser.user_privileges = 2
+    @newUser.user_email = @newUser.user_email.downcase
+    @newUser.password = @newUser.user_password
+    if @newUser.save
+      flash[:success] = "User added."
+      redirect_to action: "user_admin"
+      return
+    else
+      @user = User.new
+      @passUser = User.new
+      render action: "user_admin"
+      return
+    end
+  end
+
+  def change_password
+    if not session[:current_user_id] or not session[:current_user_email]
+      redirect_to action: "index"
+      return
+    end
+    @user = User.new
+    @passUser = User.find_by_id session[:current_user_id]
+    if @passUser.user_email != session[:current_user_email]
+      reset_session
+      redirect_to action: "index"
+      return
+    end
+
+    old_password = params[:user][:user_password]
+    if @passUser.password_valid?(old_password)
+      @passUser.password = params[:user][:user_new_password]
+      @passUser.user_password = params[:user][:user_new_password]
+      if @passUser.save
+        flash[:success] = "Password changed."
+        @passUser = User.new
+        redirect_to action: "user_admin"
+      else
+        render action: "user_admin"
+      end
+      return
+    end
+    flash[:error] = "Password is incorrect."
+    render action: "user_admin"
   end
 
   def logout
@@ -223,6 +321,14 @@ class HomeController < ApplicationController
 
   def user_login_params
     return params.require(:user).permit(:user_email, :user_password)
+  end
+
+  def user_edit_params
+    return params.require(:user).permit(:user_first_name, :user_last_name, :user_bio, :user_organization, :user_password, :user_profile_url)
+  end
+
+  def user_new_params
+    return params.require(:user).permit(:user_first_name, :user_last_name, :user_email, :user_bio, :user_organization, :user_password, :user_profile_url)
   end
 
   def post_params

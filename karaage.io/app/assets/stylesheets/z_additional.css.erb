@@ -1,6 +1,8 @@
 body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Sans-Serif;
 	padding-top: 50px;
+	font-weight: 300;
+	font-size: 16px;
 }
 .jumbotron.cover-photo {
 	background-image: url(<%= asset_data_uri 'cover/cover.jpg' %>);
@@ -65,18 +67,24 @@ body {
 .nav-img-responsive {
   height: 20px;
 }
-h1,
-h2 {
-	font-weight: 200;
+.media-user-icon {
+  width: 128px;
+  height: 128px;
 }
+.media-max-128 {
+  max-width: 128px;
+}
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
-	font-weight: 300;
+	font-weight: 400;
 }
 .navbar-brand {
 	color: #fff !important;
+	font-weight: 400 !important;
 }
 @media (min-width: 1600px) {
   .container {
@@ -86,6 +94,9 @@ h6 {
 @media (min-width: 1200px) {
   .jumbotron.jumbotron-about-background {
   	padding-left: 40%;
+  }
+  .media-max-128 {
+  	max-width: 256px;
   }
 }
 @media (min-width: 768px) {

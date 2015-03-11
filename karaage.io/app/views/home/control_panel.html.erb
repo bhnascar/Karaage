@@ -2,6 +2,11 @@
 <div class="container">
   <h1>Control panel</h1>
   <%= render partial: "shared/control", locals: {tab: 0} %>
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <p><%= flash[:success] %></p>
+    </div>
+  <% end %>
   <div class="row">
     <div class="col-sm-5">
       <h2>New post</h2>
@@ -53,7 +58,7 @@
           <th>Post Title</th>
           <th>Status</th>
         </tr>
-        <% @allPosts.each do |post| %>
+        <% @allPosts.order("post_date DESC").each do |post| %>
           <tr>
             <td><%=post.user.user_first_name%></td>
             <td><%=link_to post.post_title, {action: 'view_post', id: post.id}%></td>
