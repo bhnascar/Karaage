@@ -1,6 +1,12 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "4.6",
+	"EngineAssociation": "4.7",
 	"Category": "",
-	"Description": ""
+	"Description": "",
+	"Plugins": [
+		{
+			"Name": "CoherentUIPlugin",
+			"Enabled": true
+		}
+	]
 }

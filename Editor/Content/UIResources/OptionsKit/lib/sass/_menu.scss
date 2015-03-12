@@ -1,0 +1,154 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.cui-wrapper-options {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.cui-wrapper-form {
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cui-options-form {
+  position: relative;
+  margin: auto;
+  padding: 30px 10px 30px 30px;
+
+  min-width: 380px;
+  max-width: 600px;
+
+  height: auto;
+  background-color: rgba(75, 79, 81, 0.3);
+
+  text-align: center;
+  border-radius: 15px;
+  -webkit-user-select: none;
+  @include clearfix();
+
+  .option {
+    @include clearfix();
+  }
+}
+.cui_button_option {
+  background-color: rgba(75, 79, 81, 0.3);
+  width: 18vw;
+  min-width: 235px;
+  height: auto;
+  text-align: center;
+  //position: absolute;
+  top: 15%;
+  left: 40%;
+  margin-top: 100px;
+  border-radius: 15px;
+  -webkit-user-select: none;
+}
+.cui_button_option button:first-of-type {
+  margin-top: 13%;
+}
+.cui_button_option button {
+  margin-top: 10px;
+  min-width: 200px;
+}
+.cui_button_option button:last-of-type {
+  margin-bottom: 13%;
+}
+.cui_wrapperSlider,
+.cui_wrapperSelect {
+  width: 100%;
+  display: inline-block;
+}
+.cui_wrapperSelect select {
+  width: 20vw;
+}
+.ui-slider {
+  margin-top: 15px;
+  margin-left: 6px;
+  width: 40%;
+  float: left;
+}
+.cui_divColor {
+  display: inline-block;
+  float: left;
+}
+label {
+  color: #fff;
+}
+label.cui_sample {
+  display: inline-block;
+  float: left;
+  color: #fff;
+  margin-right: 2%;
+  margin-top: 10px;
+  min-width: 150px;
+  text-align: right;
+}
+.share-label {
+  width: 135px;
+}
+span.cui_slider {
+  height: 44px;
+  background: #1abc9c;
+  display: inline-block;
+  width: 7vw;
+  min-width: 85px;
+  float: left;
+  margin-left: 2%;
+  border-radius: 5px;
+  color: #fff;
+  line-height: 42px;
+  font-size: 14px;
+}
+button.btn.btn-inverse {
+  width: 25%;
+  float: left;
+  margin-left: 3%;
+}
+
+button.btn.btn-inverse.cui_cancelButton {
+  float: right;
+  margin-left: auto;
+  margin-right: 3%;
+}
+
+.cui_sampleSwitch {
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+}
+.cui_sampleCustonOption > input[type="number"] {
+  min-width: 63px;
+  width: 4vw;
+  float: left;
+}
+.cui_sampleCustonOption,
+.cui_wrapperSelect,
+.cui-changeOption,
+.cui_colorPicker,
+.cui_wrapperSlider {
+  width: 100%;
+  height: 12%;
+  float: left;
+  margin-top: 1vh;
+}
+.cui_wrapperSelect > div {
+  margin: 0;
+}
+.cui_colorPicker {
+  color: #fff;
+}
+.cui-changeOption {
+  margin-top: 80px;
+  margin-bottom: 10px;
+  @include clearfix();
+}
+.colorpicker {
+  z-index: 99;
+}
