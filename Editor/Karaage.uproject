@@ -7,6 +7,14 @@
 		{
 			"Name": "CoherentUIPlugin",
 			"Enabled": true
+		},
+		{
+			"Name": "Chai3dPlugin",
+			"Enabled": false
+		},
+		{
+			"Name": "BlankInputDevicePlugin",
+			"Enabled": false
 		}
 	]
 }
