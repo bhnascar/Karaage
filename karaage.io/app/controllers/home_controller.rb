@@ -144,7 +144,7 @@ class HomeController < ApplicationController
 
     @post.post_date = DateTime.strptime(edit_post.post_time, "%Y-%m-%d")
     @post.user = User.find_by_id session[:current_user_id]
-    @post.post_content = ActionController::Base.helpers.sanitize(edit_post.post_content, tags: %w(a br div h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table th tr td img), attributes: %w(class src href))
+    @post.post_content = ActionController::Base.helpers.sanitize(edit_post.post_content, tags: %w(a br div h1 h2 h3 h4 h5 h6 hr ul ol li strong em b i p dd dl table th tr td img video source), attributes: %w(class src href controls type autoplay loop muted))
     @post.post_is_published = edit_post.post_is_published
 
     if @post.save
