@@ -10,6 +10,9 @@
           <div class="media-left">
             <p><%= image_tag post.user.user_profile_url, class: "media-object media-user-icon" %></p>
             <p class="text-center"><strong><%= post.user.user_first_name + " " + post.user.user_last_name%></strong></p>
+            <% if @current_user %>
+              <p class="text-center"><%= link_to 'Edit post', controller: 'home', action: 'view_post', id: post.id %></p>
+            <% end %>
           </div>
           <div class="media-body">
             <h3 class="media-heading"><%= link_to post.post_title, action: 'view', id: post.id %> <small>posted <%= post.post_date.strftime("%d %B %Y") %></small></h3>
@@ -37,11 +40,11 @@
     </div>
   </div>
   <ul class="pager">
-    <% if params[:id].to_f > 0 %>
-      <li class="previous"><%= link_to '<span aria-hidden="true">&larr;</span> Older'.html_safe, action: 'index', id: params[:id].to_i - 1 %></li>
-    <% end %>
     <% if (params[:id].to_f + 1) * 5 < @postCount and params[:id].to_f >= 0%>
-      <li class="next"><%= link_to 'Newer <span aria-hidden="true">&rarr;</span>'.html_safe, action: 'index', id: params[:id].to_i + 1 %></li>
+      <li class="next"><%= link_to 'Older <span aria-hidden="true">&rarr;</span>'.html_safe, action: 'index', id: params[:id].to_i + 1 %></li>
+    <% end %>
+    <% if params[:id].to_f > 0 %>
+      <li class="previous"><%= link_to '<span aria-hidden="true">&larr;</span> Newer'.html_safe, action: 'index', id: params[:id].to_i - 1 %></li>
     <% end %>
   </ul>
 </div>
