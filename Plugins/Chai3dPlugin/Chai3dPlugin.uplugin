@@ -1,0 +1,21 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "Chai 3D Plugin",
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"CreatedBy" : "Karaage",
+	"CreatedByURL" : "cs210.stanford.edu",
+	"EngineVersion" : "4.2.0",
+	"Description" : "Adds support for Chai 3D Haptics SDK",
+	"Category" : "Examples",
+	"EnabledByDefault" : true,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "Chai3dPlugin",
+			"Type" : "Developer"
+		}
+	]
+}
