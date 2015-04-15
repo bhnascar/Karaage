@@ -1,0 +1,12 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{57A8D14E-40AC-2205-E168-B29C1E16354F}",
+	"Category": "",
+	"Description": "",
+	"Plugins": [
+		{
+			"Name": "BlankInputDevicePlugin",
+			"Enabled": false
+		}
+	]
+}

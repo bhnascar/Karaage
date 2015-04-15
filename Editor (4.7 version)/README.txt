@@ -1,0 +1,1 @@
+Use for 3DMouse plugin dev. only! Merge back with main Editor codebase when UE4.8 comes out.
