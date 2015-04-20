@@ -22,14 +22,20 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 8. Scale (Local X/Y/Z)
 9. Drop-to-ground
 10. 3D cursor (Moves left/right/forward/backward/up/down)
-
-Editor actions are currently triggered by a combination of mouse actions and keyboard shortcuts. We are looking into adding alternative input by having other input devices simply fire off the corresponding keyboard and mouse events. Eventually we will want more native integration, but this may be adequate for the purposes of prototyping.
+11. Highlight when cursor overlaps object
+12. Multiple types of objects (cube/sphere/cone/wedge/cylinder)
+13. Snapping to nearest grid ticks in all axes
+14. 3D mouse support (functional, but code needs refinement)
+15. Novint Falcon support (functional, but code needs refinement)
 
 ### Goals
-1. Recreate minimal editor functionality (enough for simple level design)
-2. Integrate 3DConnexion Space Navigator support to test level design workflow with said device
-3. Integrate Novint Falcon support and test level design workflow
-4. Integrate mobile device object-manipulation support and test level design workflow
+1. ~~Recreate minimal editor functionality (enough for simple level design)~~
+2. ~~Integrate 3DConnexion Space Navigator support to test level design workflow with said device~~
+3. ~~Integrate Novint Falcon support and test level design workflow~~
+4. ~~Integrate mobile device object-manipulation support and test level design workflow~~
+5. Create functional menu for editor settings
+6. Export created levels to UE4
+7. Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.
 
 ## Karaage.io
 
