@@ -87,13 +87,23 @@ bool FGeneric3DMouseInputDevice::startupDevice(){
 }
 
 
+
+
+
+
+
+
+
+
 void FGeneric3DMouseInputDevice::Tick(float DeltaTime)
 {
-	//UE_LOG(LogTemp, Warning, TEXT("TICKTICKTICKTICKT"));
-	//SendControllerEvents();
-	// Nothing necessary to do
+	
 }
 
+
+float filter(float value) {
+	return (fabs(value) < 0.0001) ? 0 : value;
+}
 
 void FGeneric3DMouseInputDevice::SendControllerEvents()
 {
@@ -113,11 +123,11 @@ void FGeneric3DMouseInputDevice::SendControllerEvents()
 		{
 			if (Event.type == SI_MOTION_EVENT)
 			{
-				MessageHandler->OnControllerAnalog(EControllerButtons::LeftAnalogX, 0, Event.u.spwData.mData[SI_TX] / 350);
-				MessageHandler->OnControllerAnalog(EControllerButtons::LeftAnalogY, 0, Event.u.spwData.mData[SI_TZ] / 350);
-				MessageHandler->OnControllerAnalog(EControllerButtons::RightAnalogX, 0, -Event.u.spwData.mData[SI_RY] / 2000);
-				MessageHandler->OnControllerAnalog(EControllerButtons::RightAnalogY, 0, Event.u.spwData.mData[SI_RX] / 2000);
-				MessageHandler->OnControllerAnalog(EControllerButtons::RightTriggerAnalog, 0, Event.u.spwData.mData[SI_TY] / 350);
+				MessageHandler->OnControllerAnalog(EControllerButtons::LeftAnalogX, 0, filter(Event.u.spwData.mData[SI_TX]/ 1000.f));
+				MessageHandler->OnControllerAnalog(EControllerButtons::LeftAnalogY, 0, filter(Event.u.spwData.mData[SI_TZ] / 1000.f));
+				MessageHandler->OnControllerAnalog(EControllerButtons::RightAnalogX, 0, filter(-Event.u.spwData.mData[SI_RY] / 1000.f));
+				MessageHandler->OnControllerAnalog(EControllerButtons::RightAnalogY, 0, filter(Event.u.spwData.mData[SI_RX] / 1000.f));
+				MessageHandler->OnControllerAnalog(EControllerButtons::RightTriggerAnalog, 0, filter(Event.u.spwData.mData[SI_TY] / 1000.f));
 				UE_LOG(LogTemp, Warning, TEXT("MOTION EVENT: ROTATION Y: %f   ROTATION X: %f \n"), -Event.u.spwData.mData[SI_RY], Event.u.spwData.mData[SI_RX]);
 
 			
@@ -278,7 +288,7 @@ void FGeneric3DMouseInputDevice::createSPWindow(int atx, int aty, int hi, int wi
 		NULL);               /*creation parameters*/
 
 	/* display the window */
-	//ShowWindow(hWndMain, SW_SHOW);
+	ShowWindow(hWndMain, SW_SHOW);
 
 	/* get handle of our window to draw on */
 	hdc = GetDC(hWndMain);

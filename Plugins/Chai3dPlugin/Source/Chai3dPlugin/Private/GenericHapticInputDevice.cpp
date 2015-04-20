@@ -44,6 +44,15 @@ void FGenericHapticInputDevice::Tick(float DeltaTime)
 void FGenericHapticInputDevice::SendControllerEvents()
 {
 	// Read haptic device position 
+
+
+
+
+
+
+
+
+
 	chai3d::cVector3d position;
 	HapticDevice->getPosition(position);
 
