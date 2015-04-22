@@ -14,7 +14,7 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
   1. By line trace from player viewpoint
   2. By line trace through cursor
   3. By cursor overlap
-3. ~~Select/Deselect multiple cubes
+3. ~~Select/Deselect multiple cubes~~
 4. Delete cube
 5. Display local orientation (axes) of cube
 6. Rotate (Local X/Y/Z) (via keyboard)
