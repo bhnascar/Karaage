@@ -14,18 +14,18 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
   1. By line trace from player viewpoint
   2. By line trace through cursor
   3. By cursor overlap
-3. Select/Deselect multiple cubes
+3. ~~Select/Deselect multiple cubes
 4. Delete cube
 5. Display local orientation (axes) of cube
-6. Rotate (Local X/Y/Z)
-7. Translate (World X/Y/Z)
-8. Scale (Local X/Y/Z)
+6. Rotate (Local X/Y/Z) (via keyboard)
+7. Translate (World X/Y/Z) (with Falcon)
+8. Scale (Local X/Y/Z) (via keyboard)
 9. Drop-to-ground
 10. 3D cursor (Moves left/right/forward/backward/up/down)
 11. Highlight when cursor overlaps object
 12. Multiple types of objects (cube/sphere/cone/wedge/cylinder)
 13. Snapping to nearest grid ticks in all axes
-14. 3D mouse support (functional, but code needs refinement)
+14. 3D mouse support (functional, but code needs refinement) (now with analog input!)
 15. Novint Falcon support (functional, but code needs refinement)
 
 ### Goals
