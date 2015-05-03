@@ -46,7 +46,7 @@ The Karaage editor requires a 3DConnexion Space Navigator and Novint Falcon. If 
 
 Please install the following drivers BEFORE plugging in the devices to avoid any issues with the plug-and-play system installing the wrong drivers. The drivers for the Space Navigator can be found [online here](http://www.3dconnexion.com/service/drivers.html). The drivers for the Novint Falcon can be found [at the bottom of the page here](http://web.stanford.edu/class/cs277/assignments/index.html). 
 
-Note that we are NOT using the official Novint Falcon drivers! This is because we want to work with Chai3D 3.0.
+Note that we are NOT using the official Novint Falcon drivers! This is because we want to work with Chai3D 3.0 (see below).
 
 ## Build guide (read carefully!)
 Building the Karaage UE4 project from the source requires libraries for 3DConnexion and Chai3D / Novint Falcon, which we have included along with our Connexion and Chai3D plugins. Additionally, you will need to install the third-party CoherentUI plugin.
