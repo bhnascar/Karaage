@@ -43,7 +43,9 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 7. Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.
 
 ## Running the editor
-The Karaage editor requires a 3DConnexion Space Navigator and Novint Falcon. Please install these drivers BEFORE plugging in the devices to avoid any issues with the plug-and-play system installing the wrong drivers. The drivers for the Space Navigator can be found [online here](http://www.3dconnexion.com/service/drivers.html). The drivers for the Novint Falcon can be found [at the bottom of the page here](http://web.stanford.edu/class/cs277/assignments/index.html). 
+The Karaage editor requires a 3DConnexion Space Navigator and Novint Falcon. If you don't have these devices already, you can buy a Space Navigator at the [3DConnexion store](http://www.3dconnexion.com/buy/shop.html) and a Falcon at the [Novint store](https://www.novint.com/index.php/store).
+
+Please install the following drivers BEFORE plugging in the devices to avoid any issues with the plug-and-play system installing the wrong drivers. The drivers for the Space Navigator can be found [online here](http://www.3dconnexion.com/service/drivers.html). The drivers for the Novint Falcon can be found [at the bottom of the page here](http://web.stanford.edu/class/cs277/assignments/index.html). 
 
 Note that we are NOT using the official Novint Falcon drivers! This is because we want to work with Chai3D 3.0.
 
