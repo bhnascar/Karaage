@@ -17,16 +17,21 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 3. ~~Select/Deselect multiple cubes~~
 4. Delete cube
 5. Display local orientation (axes) of cube
-6. Rotate (Local X/Y/Z) (via keyboard)
+6. Rotate (Local X/Y/Z) (via keyboard - Falcon control scheme in in the works)
 7. Translate (World X/Y/Z) (with Falcon)
-8. Scale (Local X/Y/Z) (via keyboard)
+8. Scale (Local X/Y/Z) (with Falcon)
 9. Drop-to-ground
 10. 3D cursor (Moves left/right/forward/backward/up/down)
 11. Highlight when cursor overlaps object
 12. Multiple types of objects (cube/sphere/cone/wedge/cylinder)
 13. Snapping to nearest grid ticks in all axes
 14. 3D mouse support (functional, but code needs refinement) (now with analog input!)
-15. Novint Falcon support (functional, but code needs refinement)
+15. Novint Falcon support
+16.
+
+### Stretch features
+1. Multiple select (by dragging a bounding volume)
+2. Add new object by dragging and cloning
 
 ### Goals
 1. ~~Recreate minimal editor functionality (enough for simple level design)~~
@@ -36,6 +41,25 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 5. Create functional menu for editor settings
 6. Export created levels to UE4
 7. Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.
+
+## Running the editor
+The Karaage editor requires a 3DConnexion Space Navigator and Novint Falcon. Please install these drivers BEFORE plugging in the devices to avoid any issues with the plug-and-play system installing the wrong drivers. The drivers for the Space Navigator can be found [online here](http://www.3dconnexion.com/service/drivers.html). The drivers for the Novint Falcon can be found [at the bottom of the page here](http://web.stanford.edu/class/cs277/assignments/index.html). 
+
+Note that we are NOT using the official Novint Falcon drivers! This is because we want to work with Chai3D 3.0.
+
+## Build guide (read carefully!)
+Building the Karaage UE4 project from the source requires libraries for 3DConnexion and Chai3D / Novint Falcon, which we have included with our engine plugins. Additionally, you will need to install the third-party CoherentUI plugin.
+
+### 3DConnexion
+The connexion plugin should be installed to the Unreal source as an engine plugin at Engine/Source/ThirdParty/connexion. This plugin includes precompiled versions of the 3DConnexion library for x86 and x64 Windows machines. Should you need to recompile these libraries from the source, you can download the SDK from the [3DConnexion website here](http://www.3dconnexion.com/service/software-developer.html), but you will have to sign up with a developer account and wait for your request to be approved.
+
+### Chai3D / Novint Falcon
+The chai3d plugin should be installed to the Unreal source as an engine plugin at Engine/Source/ThirdParty/chai3d. This plugin includes precompiled versions of the Chai3D haptics library for x86 and x64 Windows machines. Should you need to recompile the Chai3D from the source, you can [find it online here](http://web.stanford.edu/class/cs277/assignments/index.html). 
+
+Don't download Chai3D from the official site! The official release is at 2.0 and is dated; it hasn't been updated for some time and version 3.0 has a lot of new features. We chose to use Chai3D 3.0 because we used it in a haptics class at Stanford before, and we wanted to stick to something that we knew would work for sure. (The class was actually taught by Ken Salisbury, Sonny Chan, and Francois Conti, who are leading researchers in haptics and contributors to the Chai3D project).
+
+### CoherentUI
+The Karaage UE4 project requires the CoherentUI engine plugin to load. You can download a trial version of the Coherent [here](https://coherent-labs.com/ue4/), but again, you will have to sign up with a developer account and wait for your request to be approved. Note that CoherentUI currently supports UE4 up to version 4.7. This means it does not work with the promoted UE4 branch!
 
 ## Karaage.io
 
