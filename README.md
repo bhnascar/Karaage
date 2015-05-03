@@ -49,13 +49,13 @@ Please install the following drivers BEFORE plugging in the devices to avoid any
 Note that we are NOT using the official Novint Falcon drivers! This is because we want to work with Chai3D 3.0.
 
 ## Build guide (read carefully!)
-Building the Karaage UE4 project from the source requires libraries for 3DConnexion and Chai3D / Novint Falcon, which we have included with our engine plugins. Additionally, you will need to install the third-party CoherentUI plugin.
+Building the Karaage UE4 project from the source requires libraries for 3DConnexion and Chai3D / Novint Falcon, which we have included along with our Connexion and Chai3D plugins. Additionally, you will need to install the third-party CoherentUI plugin.
 
 ### 3DConnexion
-The connexion plugin should be installed to the Unreal source as an engine plugin at Engine/Source/ThirdParty/connexion. This plugin includes precompiled versions of the 3DConnexion library for x86 and x64 Windows machines. Should you need to recompile these libraries from the source, you can download the SDK from the [3DConnexion website here](http://www.3dconnexion.com/service/software-developer.html), but you will have to sign up with a developer account and wait for your request to be approved.
+The Connexion plugin should be installed to the Unreal source as an engine plugin at Engine/Plugins/Developer. The supporting library should be installed at Engine/Source/ThirdParty/connexion. The supporting library includes headers and precompiled versions of the 3DConnexion library for x86 and x64 Windows machines. Should you need to recompile these libraries from the source, you can download the SDK from the [3DConnexion website here](http://www.3dconnexion.com/service/software-developer.html), but you will have to sign up with a developer account and wait for your request to be approved.
 
 ### Chai3D / Novint Falcon
-The chai3d plugin should be installed to the Unreal source as an engine plugin at Engine/Source/ThirdParty/chai3d. This plugin includes precompiled versions of the Chai3D haptics library for x86 and x64 Windows machines. Should you need to recompile the Chai3D from the source, you can [find it online here](http://web.stanford.edu/class/cs277/assignments/index.html). 
+The Chai3D plugin should be installed to the Unreal source as an engine plugin at Engine/Plugins/Developer. The supporting library should be installed at Engine/Source/ThirdParty/chai3d. This supporting library includes headers and precompiled versions of the Chai3D haptics library for x86 and x64 Windows machines. Should you need to recompile the Chai3D from the source, you can [find it online here](http://web.stanford.edu/class/cs277/assignments/index.html). 
 
 Don't download Chai3D from the official site! The official release is at 2.0 and is dated; it hasn't been updated for some time and version 3.0 has a lot of new features. We chose to use Chai3D 3.0 because we used it in a haptics class at Stanford before, and we wanted to stick to something that we knew would work for sure. (The class was actually taught by Ken Salisbury, Sonny Chan, and Francois Conti, who are leading researchers in haptics and contributors to the Chai3D project).
 
