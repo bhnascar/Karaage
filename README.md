@@ -27,7 +27,6 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 13. Snapping to nearest grid ticks in all axes
 14. 3D mouse support (functional, but code needs refinement) (now with analog input!)
 15. Novint Falcon support
-16.
 
 ### Stretch features
 1. Multiple select (by dragging a bounding volume)
