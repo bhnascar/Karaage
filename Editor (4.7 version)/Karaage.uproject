@@ -5,12 +5,12 @@
 	"Description": "",
 	"Plugins": [
 		{
-			"Name": "CoherentUIPlugin",
-			"Enabled": true
-		},
-		{
 			"Name": "BlankInputDevicePlugin",
 			"Enabled": false
+		},
+		{
+			"Name": "CoherentUIPlugin",
+			"Enabled": true
 		}
 	]
 }
