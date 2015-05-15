@@ -8,7 +8,7 @@ engine.on('SetContentTypeForHud', function (index) {
     $('.menu-container').stop().animate({opacity:'100'});
   }
   $('.menu-container').show();
-  $('#mode-content').html('Inserting' + contentTypes[index]);
+  $('#mode-content').html('Inserting ' + contentTypes[index]);
   $('.menu-container').fadeOut(3000);
 });
 
