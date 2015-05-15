@@ -15,9 +15,14 @@ h1 {
   color: #fff;
   border-radius: 20px;
 }
+.large-menu-container {
+  width: 40%;
+}
+
 .list-group-item {
   background-color: rgba(0,0,0,0);
   border: 0;
+  font-size: 16px;
 }
 a.list-group-item {
   color: #fff;
