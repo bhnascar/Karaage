@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Test Page</title>
+  <meta charset="utf-8" />
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Test Page</h1>
+  </div>
+
+  <h2 id="coords">TEST TEST TEST</h2>
+  <script src="javascript/coherent.js"></script>
+  <script src="javascript/jquery-2.1.4.min.js"></script>
+  <script>
+    $(function() {
+      $("#coords").html("SUP");
+      engine.on('GamepadLeftStickX', function (x) {
+        $("#coords").html(x);
+      });
+    });
+  </script>
+</body>
+</html>
