@@ -14,7 +14,8 @@
       <div class="global-menu-content">
         <div class="list-group">
           <a href="#" class="list-group-item" id="new-level-menu-button">New level</a>
-          <a href="#" class="list-group-item" id="save-level-menu-button">Save level</a>
+          <a href="#" class="list-group-item" id="load-level-menu-button">Load level</a>
+          <a href="#" class="list-group-item" id="save-level-menu-button">Save level as...</a>
           <a href="#" class="list-group-item" id="settings-menu-button">Settings</a>
           <a href="#" class="list-group-item" id="quit-menu-button">Quit</a>
         </div>
@@ -32,7 +33,22 @@
       </div>
     </div>
   </div>
-  <!-- Save confirmation menu -->
+  <!-- Save as menu -->
+  <div class="menu-container large-menu-container" id="save-container">
+    <h1>Save as...</h1>
+    <div class="global-menu-content">
+      <div class="form-group">
+        <div class="list-input-item">
+          <input type="text" class="menu-input" id="file-name-input" placeholder="UntitledLevel.karaage" />
+        </div>
+      </div>
+      <div class="list-group">
+        <a href="#" class="list-group-item" id="save-level">Save</a>
+        <a href="#" class="list-group-item" id="save-cancel">Cancel</a>
+      </div>
+    </div>
+  </div>
+  <!-- Quit confirmation menu -->
   <div class="menu-container large-menu-container" id="save-confirmation-container">
     <h1>Save before quitting?</h1>
     <div class="global-menu-content">
