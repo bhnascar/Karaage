@@ -75,10 +75,10 @@ engine.on('3DMouseRotateX', function (argument) {
   var activeItem = $(".active");
   var activeIndex = activeItem.parent().children().index(activeItem);
 
-  if (argument >= 0) {
+  if (argument > 0) {
     activeIndex = (activeIndex + 1) % menuCount;
   }
-  else {
+  else if(argument < 0) {
     activeIndex = (activeIndex - 1 + menuCount) % menuCount;
   }
   $(".list-group-item").removeClass('active');
