@@ -69,6 +69,64 @@ $( "#save-confirmation-cancel" ).click(function( event ) {
   });
 });
 
-engine.on('3DMouseRotateX', function (index) {
+engine.on('3DMouseRotateX', function (argument) {
   var menuCount = $(".list-group-item:visible").length;
+
+  var activeItem = $(".active");
+  var activeIndex = activeItem.parent().children().index(activeItem);
+
+  if (argument >= 0) {
+    activeIndex = (activeIndex + 1) % menuCount;
+  }
+  else {
+    activeIndex = (activeIndex - 1 + menuCount) % menuCount;
+  }
+  $(".list-group-item").removeClass('active');
+  $(".list-group-item:visible").eq(activeIndex).addClass('active');
+});
+
+
+// Keyboard shortcuts for testing
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 13: { // enter
+          $(".active").click();
+          break;
+        }
+
+        case 37:  {// left
+          break;
+        }
+
+        case 38: // up
+          var menuCount = $(".list-group-item:visible").length;
+
+          var activeItem = $(".active");
+          var activeIndex = activeItem.parent().children().index(activeItem);
+
+          activeIndex = (activeIndex - 1 + menuCount) % menuCount;
+
+          $(".list-group-item").removeClass('active');
+          $(".list-group-item:visible").eq(activeIndex).addClass('active');
+        break;
+
+        case 39: { // right
+          break;
+        }
+
+        case 40: // down
+          var menuCount = $(".list-group-item:visible").length;
+
+          var activeItem = $(".active");
+          var activeIndex = activeItem.parent().children().index(activeItem);
+
+          activeIndex = (activeIndex + 1) % menuCount;
+
+          $(".list-group-item").removeClass('active');
+          $(".list-group-item:visible").eq(activeIndex).addClass('active');
+        break;
+
+        default: return; // exit this handler for other keys
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
 });
