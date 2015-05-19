@@ -1,5 +1,6 @@
 body, html {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+  background-color: transparent;
 }
 h1 {
   font-weight: 300;
@@ -17,6 +18,7 @@ h1 {
 }
 .large-menu-container {
   width: 80%;
+  background-color: rgba(0,0,0,0.6);
 }
 
 .list-group-item {
