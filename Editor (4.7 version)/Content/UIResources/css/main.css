@@ -1,7 +1,7 @@
 body, html {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
   background-color: transparent;
-  width: 600px;
+  width: 100%;
 }
 h1 {
   font-weight: 300;
@@ -11,14 +11,31 @@ h1 {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40%;
   padding: 20px;
   background-color: rgba(0,0,0,0.4);
   color: #fff;
   /*border-radius: 20px;*/
+  text-align: center;
 }
 .large-menu-container {
   width: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0);
+}
+
+.menu-button {
+  border-color: #fff;
+  border-style: solid;
+  border-width: 2px;
+  margin: 10px;
+}
+.menu-button-item {
+  display: block;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+
+  font-size: 20px;
 }
 
 .list-group-item {
@@ -34,6 +51,19 @@ a.list-group-item:focus {
   color: #fff;
   text-decoration: none;
   background-color: rgba(1,1,1,0.1);
+}
+
+a.menu-button-item:link,
+a.menu-button-item:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.menu-button-item:hover,
+a.menu-button-item:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #337AB7;
 }
 
 input {
