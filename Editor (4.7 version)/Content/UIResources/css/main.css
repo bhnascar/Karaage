@@ -1,10 +1,11 @@
 body, html {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+  font-family: 'Rambla', Arial, Sans-Serif;
   background-color: transparent;
   width: 100%;
 }
 h1 {
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 60px;
 }
 
 .menu-container {
@@ -19,8 +20,9 @@ h1 {
   text-align: center;
 }
 .large-menu-container {
+  margin-top: 300px;
   width: 100%;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0.9);
 }
 
 .menu-button {
@@ -34,8 +36,9 @@ h1 {
   height: 100px;
   line-height: 100px;
   vertical-align: middle;
+  background-color: red;
 
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .list-group-item {
