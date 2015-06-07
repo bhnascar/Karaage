@@ -14,23 +14,23 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
   1. By line trace from player viewpoint
   2. By line trace through cursor
   3. By cursor overlap
-3. ~~Select/Deselect multiple cubes~~
-4. Delete cube
-5. Display local orientation (axes) of cube
-6. Rotate (Local X/Y/Z) (via keyboard - Falcon control scheme in in the works)
-7. Translate (World X/Y/Z) (with Falcon)
-8. Scale (Local X/Y/Z) (with Falcon)
-9. Drop-to-ground
-10. 3D cursor (Moves left/right/forward/backward/up/down)
-11. Highlight when cursor overlaps object
-12. Multiple types of objects (cube/sphere/cone/wedge/cylinder)
-13. Snapping to nearest grid ticks in all axes
-14. 3D mouse support (functional, but code needs refinement) (now with analog input!)
-15. Novint Falcon support
+3. ~~Select/Deselect multiple cubes~~ (Deferred)
+4. Add new object by dragging and cloning
+5. Delete cube
+6. Display local orientation (axes) of cube
+7. Rotate (Local X/Y/Z) (with Falcon)
+8. Translate (World X/Y/Z) (with Falcon)
+9. Scale (Local X/Y/Z) (with Falcon)
+10. Drop-to-ground
+11. 3D cursor (Moves left/right/forward/backward/up/down)
+12. Highlight when cursor overlaps object
+13. Multiple types of objects (cube/sphere/cone/wedge/cylinder)
+14. Snapping to nearest grid ticks in all axes
+15. 3D mouse support (functional, but code needs refinement) (now with analog input!)
+16. Novint Falcon support
 
 ### Stretch features
 1. Multiple select (by dragging a bounding volume)
-2. Add new object by dragging and cloning
 
 ### Goals
 1. ~~Recreate minimal editor functionality (enough for simple level design)~~
@@ -38,10 +38,10 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 3. ~~Integrate Novint Falcon support and test level design workflow~~
 4. ~~Integrate mobile device object-manipulation support and test level design workflow~~
 5. Create functional menu for editor settings
-6. Export created levels to UE4
-7. Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.
+6. ~~Export created levels to UE4~~ (Deferred)
+7. ~~Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.~~
 
-## Running the editor
+## Running the editor (without source build)
 The Karaage editor requires a 3DConnexion Space Navigator and Novint Falcon. If you don't have these devices already, you can buy a Space Navigator at the [3DConnexion store](http://www.3dconnexion.com/buy/shop.html) and a Falcon at the [Novint store](https://www.novint.com/index.php/store).
 
 Please install the following drivers BEFORE plugging in the devices to avoid any issues with the plug-and-play system installing the wrong drivers. The drivers for the Space Navigator can be found [online here](http://www.3dconnexion.com/service/drivers.html). The drivers for the Novint Falcon can be found [at the bottom of the page here](http://web.stanford.edu/class/cs277/assignments/index.html). 
