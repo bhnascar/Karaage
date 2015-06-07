@@ -1,0 +1,115 @@
+<html>
+<head>
+  <title>Karaage Editor Global Menu</title>
+  <meta charset="utf-8" />
+  <link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="./css/main.css" />
+  <link rel="stylesheet" type="text/css" href="./css/menu.css" />
+</head>
+<body>
+  <div class="menu-container large-menu-container" id="main-menu-container">
+    <h1>Editor Menu</h1>
+    <div class="content">
+      <div class="global-menu-content">
+        <div class="row">
+          <div class="col-sm-2 highlight-row-1 highlight-row-2">
+            <div class="menu-button">
+              <a href="#" class="menu-button-item hovered" id="new-level-menu-button">New level</a>
+            </div>
+          </div>
+          <div class="col-sm-2 highlight-row-3 highlight-row-4">
+            <div class="menu-button">
+              <a href="#" class="menu-button-item" id="load-level-menu-button">Load level</a>
+            </div>
+          </div>
+          <div class="col-sm-2 highlight-row-5 highlight-row-6">
+            <div class="menu-button">
+              <a href="#" class="menu-button-item" id="save-level-menu-button">Save level as...</a>
+            </div>
+          </div>
+          <div class="col-sm-2 highlight-row-7 highlight-row-8">
+            <div class="menu-button">
+              <a href="#" class="menu-button-item" id="settings-menu-button">Settings</a>
+            </div>
+          </div>
+          <div class="col-sm-2 highlight-row-9 highlight-row-10">
+            <div class="menu-button">
+              <a href="#" class="menu-button-item" id="quit-menu-button">Quit</a>
+            </div>
+          </div>
+          <div class="col-sm-2 highlight-row-11 highlight-row-12">
+            <div class="menu-button">
+              <a href="#" class="menu-button-item" id="about-menu-button">About</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- New level confirmation menu -->
+  <div class="menu-container large-menu-container" id="new-level-confirmation-container">
+    <h1>Save before creating a new level?</h1>
+    <div class="global-menu-content">
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-3 highlight-row-4 highlight-row-5">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item hovered" id="new-level-confirmation-save">Save and create a new level</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-6 highlight-row-7">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="new-level-confirmation-discard">Create a new level without savingt</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-8 highlight-row-9">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="new-level-confirmation-cancel">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Save as menu -->
+  <div class="menu-container large-menu-container" id="save-container">
+    <h1>Save as...</h1>
+    <div class="global-menu-content">
+      <div class="form-group">
+        <div class="list-input-item">
+          <input type="text" class="menu-input" id="file-name-input" placeholder="UntitledLevel.karaage" />
+        </div>
+      </div>
+      <div class="list-group">
+        <a href="#" class="list-group-item" id="save-level">Save</a>
+        <a href="#" class="list-group-item" id="save-cancel">Cancel</a>
+      </div>
+    </div>
+  </div>
+  <!-- Quit confirmation menu -->
+  <div class="menu-container large-menu-container" id="save-confirmation-container">
+    <h1>Save before quitting?</h1>
+    <div class="global-menu-content">
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-3 highlight-row-4 highlight-row-5">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item hovered" id="quit-confirmation-save">Save and quit</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-6 highlight-row-7">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="quit-confirmation-discard">Quit without saving</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-8 highlight-row-9">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="quit-confirmation-cancel">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="javascript/coherent.js"></script>
+<script src="javascript/jquery-2.1.4.min.js"></script>
+<script src="javascript/menu.js"></script>
+</body>
+</html>

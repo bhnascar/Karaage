@@ -36,7 +36,7 @@ h1 {
   height: 100px;
   line-height: 100px;
   vertical-align: middle;
-  background-color: red;
+  background-color: rgba(0,0,0,0.8);
 
   font-size: 40px;
 }
@@ -63,7 +63,8 @@ a.menu-button-item:visited {
 }
 
 a.menu-button-item:hover,
-a.menu-button-item:focus {
+a.menu-button-item:focus,
+a.menu-button-item.hovered {
   color: #fff;
   text-decoration: none;
   background-color: #337AB7;
