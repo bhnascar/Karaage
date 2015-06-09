@@ -312,7 +312,9 @@ engine.on('MenuVisibilityChanged', function( isShown ) {
 engine.on('LevelLoaded', function() {
   $("#load-container").fadeOut(250, function() {
     $("#load-complete-container").delay(50).fadeIn(250, function() {
-      $("#load-complete-container").delay(2000).fadeOut();
+      $("#load-complete-container").delay(2000).fadeOut(250, function() {
+        engine.trigger("Event Hide Menu");
+      });
     });
   });
 });
@@ -321,7 +323,9 @@ engine.on('LevelLoaded', function() {
 engine.on('LevelSaved', function() {
   $("#save-container").fadeOut(250, function() {
     $("#save-complete-container").delay(50).fadeIn(250, function() {
-      $("#save-complete-container").delay(2000).fadeOut();
+      $("#save-complete-container").delay(2000).fadeOut(250, function() {
+        engine.trigger("Event Hide Menu");
+      });
     });
   });
 });
