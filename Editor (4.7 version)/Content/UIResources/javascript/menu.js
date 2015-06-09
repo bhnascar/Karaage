@@ -4,6 +4,7 @@ $( "#load-container").hide();
 $( "#settings-container").hide();
 $( "#new-level-confirmation-container").hide();
 $( "#load-complete-container" ).hide();
+$( "#save-complete-container" ).hide();
 $( "#main-menu-container").hide();
 
 // Main menu
@@ -302,6 +303,7 @@ engine.on('MenuVisibilityChanged', function( isShown ) {
     $( "#settings-container").hide();
     $( "#new-level-confirmation-container").hide();
     $( "#load-complete-container" ).hide();
+    $( "#save-complete-container" ).hide();
     $(" #main-menu-container").fadeIn();
   }
 });
