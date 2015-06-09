@@ -71,6 +71,7 @@ var saveFunction = function (index) {
                   + currentDate.getHours() + ":"  
                   + currentDate.getMinutes();
 
+  engine.trigger("Print Line", modifiedDate + " | level" + index)
   engine.trigger("Event Save Level", "level" + index, modifiedDate);
 };
 
