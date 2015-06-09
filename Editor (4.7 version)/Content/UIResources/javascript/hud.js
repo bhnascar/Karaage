@@ -5,13 +5,13 @@ var transformIcons = ['hud_icons/Translate.png', 'hud_icons/Scale.png', 'hud_ico
 
 var originalCSS = {
   width: "100%",
-  marginTop: "35%",
-  paddingLeft: "35%",
-  paddingRight: "35%"
+  marginTop: "40%",
+  paddingLeft: "30%",
+  paddingRight: "30%"
 };
 var miniCSS = {
   width: "50%",
-  marginTop: "65%",
+  marginTop: "25%",
   paddingLeft: "5%",
   paddingRight: "5%"
 };
