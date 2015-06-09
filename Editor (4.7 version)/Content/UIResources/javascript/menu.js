@@ -82,7 +82,7 @@ $( "#quit-confirmation-cancel" ).click(function( event ) {
 });
 
 // Get row of item that is currently looked at
-var currentRow = 0;
+var currentRow = -1;
 
 engine.on('GazeInput', function(yPosition, xPosition) {
   // 12 row system, so multiply percentage by 12.
@@ -141,10 +141,16 @@ engine.on('GazeInput', function(yPosition, xPosition) {
 
     var currentHoveredItem = $(".hovered:visible");
 
-    if (currentHoveredItem != selectedItem) {
-      engine.trigger("Print Line", "Changing item from " + currentHoveredItem + " to " + selectedItem);
+    if (currentHoveredItem.html() && currentHoveredItem != selectedItem) {
+      engine.trigger("Print Line", "Changing hover item");
+
+      if (currentHoveredItem.html()) {
+        currentHoveredItem.html(currentHoveredItem.html().replace(/«|»/g, ''));
+      }
       currentHoveredItem.removeClass("hovered");
       selectedItem.addClass("hovered");
+      selectedItem.prepend("» ");
+      selectedItem.append(" «");
     }
   }
 });
@@ -162,3 +168,81 @@ setInterval(function() {
   engine.trigger("Event Save Level", "Test " + counter);
   counter++;
 }, 1000);
+
+
+
+// Test selections
+// testXPos = 0.0;
+
+// setInterval(function() {
+//   testXPos += 0.05
+//   if (testXPos >= 1.0) {
+//     testXPos -= 1;
+//   }
+//   var newRow = Math.ceil(testXPos * 12);
+//   if (newRow == 0) {
+//     newRow = 1;
+//   }
+
+//   // $(".menu-button-item").removeClass("hovered");
+
+//   var selectedItem = null;
+//   if (currentRow != newRow) {
+//     currentRow = newRow;
+//     switch (currentRow) {
+//       case 1:
+//         selectedItem = $(".highlight-row-1:visible").find(".menu-button-item");
+//         break;
+//       case 2:
+//         selectedItem = $(".highlight-row-2:visible").find(".menu-button-item");
+//         break;
+//       case 3:
+//         selectedItem = $(".highlight-row-3:visible").find(".menu-button-item");
+//         break;
+//       case 4:
+//         selectedItem = $(".highlight-row-4:visible").find(".menu-button-item");
+//         break;
+//       case 5:
+//         selectedItem = $(".highlight-row-5:visible").find(".menu-button-item");
+//         break;
+//       case 6:
+//         selectedItem = $(".highlight-row-6:visible").find(".menu-button-item");
+//         break;
+//       case 7:
+//         selectedItem = $(".highlight-row-7:visible").find(".menu-button-item");
+//         break;
+//       case 8:
+//         selectedItem = $(".highlight-row-8:visible").find(".menu-button-item");
+//         break;
+//       case 9:
+//         selectedItem = $(".highlight-row-9:visible").find(".menu-button-item");
+//         break;
+//       case 10:
+//         selectedItem = $(".highlight-row-10:visible").find(".menu-button-item");
+//         break;
+//       case 11:
+//         selectedItem = $(".highlight-row-11:visible").find(".menu-button-item");
+//         break;
+//       case 12:
+//         selectedItem = $(".highlight-row-12:visible").find(".menu-button-item");
+//         break;
+//       default:
+//         selectedItem = $(".highlight-row-1:visible").find(".menu-button-item");
+//         break;
+//     }
+
+//     var currentHoveredItem = $(".hovered:visible");
+
+//     if (currentHoveredItem != selectedItem) {
+//       engine.trigger("Print Line", "Changing hover item");
+
+//       if (currentHoveredItem.html()) {
+//         currentHoveredItem.html(currentHoveredItem.html().replace(/«|»/g, ''));
+//       }
+//       currentHoveredItem.removeClass("hovered");
+//       selectedItem.addClass("hovered");
+//       selectedItem.prepend("» ");
+//       selectedItem.append(" «");
+//     }
+//   }
+// }, 300);
