@@ -147,6 +147,10 @@ $( "#load-level-10").click(function ( event ) {
   event.preventDefault();
   loadFunction(10);
 });
+$( "#load-level-default").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(100);
+});
 
 $( "#load-cancel" ).click(function( event ) {
   event.preventDefault();
