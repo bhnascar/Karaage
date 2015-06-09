@@ -15,7 +15,7 @@
         <div class="row">
           <div class="col-sm-2 highlight-row-1 highlight-row-2">
             <div class="menu-button">
-              <a href="#" class="menu-button-item hovered" id="new-level-menu-button">New level</a>
+              <a href="#" class="menu-button-item" id="new-level-menu-button">New level</a>
             </div>
           </div>
           <div class="col-sm-2 highlight-row-3 highlight-row-4">
@@ -25,7 +25,7 @@
           </div>
           <div class="col-sm-2 highlight-row-5 highlight-row-6">
             <div class="menu-button">
-              <a href="#" class="menu-button-item" id="save-level-menu-button">Save level as...</a>
+              <a href="#" class="menu-button-item" id="save-level-menu-button">Save level</a>
             </div>
           </div>
           <div class="col-sm-2 highlight-row-7 highlight-row-8">
@@ -54,7 +54,7 @@
       <div class="row">
         <div class="col-sm-2 col-sm-offset-3 highlight-row-4 highlight-row-5">
           <div class="menu-button">
-            <a href="#" class="menu-button-item hovered" id="new-level-confirmation-save">Save and create a new level</a>
+            <a href="#" class="menu-button-item" id="new-level-confirmation-save">Save and create a new level</a>
           </div>
         </div>
         <div class="col-sm-2 highlight-row-6 highlight-row-7">
@@ -70,18 +70,103 @@
       </div>
     </div>
   </div>
-  <!-- Save as menu -->
-  <div class="menu-container large-menu-container" id="save-container">
-    <h1>Save as...</h1>
+  <!-- Load menu -->
+  <div class="menu-container large-menu-container" id="load-container">
+    <h1>Load level</h1>
+    <h4><strong>Warning!</strong> This will discard all unsaved changes!</h4>
     <div class="global-menu-content">
-      <div class="form-group">
-        <div class="list-input-item">
-          <input type="text" class="menu-input" id="file-name-input" placeholder="UntitledLevel.karaage" />
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-1 highlight-row-2 highlight-row-3">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="load-level-1">Load from Slot 1</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-4 highlight-row-5">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="load-level-2">Load from Slot 2</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-6 highlight-row-7">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="load-level-3">Load from Slot 3</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-8 highlight-row-9">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="load-level-4">Load from Slot 4</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-10 highlight-row-11">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="load-cancel">Cancel</a>
+          </div>
         </div>
       </div>
-      <div class="list-group">
-        <a href="#" class="list-group-item" id="save-level">Save</a>
-        <a href="#" class="list-group-item" id="save-cancel">Cancel</a>
+    </div>
+  </div>
+  <!-- Save as menu -->
+  <div class="menu-container large-menu-container" id="save-container">
+    <h1>Save level</h1>
+    <div class="global-menu-content">
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-1 highlight-row-2 highlight-row-3">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="save-level-1">Save in Slot 1</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-4 highlight-row-5">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="save-level-2">Save in Slot 2</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-6 highlight-row-7">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="save-level-3">Save in Slot 3</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-8 highlight-row-9">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="save-level-4">Save in Slot 4</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-10 highlight-row-11">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="save-cancel">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Settings menu -->
+  <div class="menu-container large-menu-container" id="settings-container">
+    <h1>Editor settings</h1>
+    <div class="global-menu-content">
+      <div class="row">
+        <div class="col-sm-2 col-sm-offset-1 highlight-row-2 highlight-row-3">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="settings-translate-grid">Translate grid: 5uu</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-4 highlight-row-5">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="settings-rotate-grid">Rotate grid: 15 deg</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-6 highlight-row-7">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="settings-haptics">Haptics: On</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-8 highlight-row-9">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="settings-lighthouse">Lighthouse: On</a>
+          </div>
+        </div>
+        <div class="col-sm-2 highlight-row-10 highlight-row-11">
+          <div class="menu-button">
+            <a href="#" class="menu-button-item" id="settings-cancel">Back</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -92,7 +177,7 @@
       <div class="row">
         <div class="col-sm-2 col-sm-offset-3 highlight-row-4 highlight-row-5">
           <div class="menu-button">
-            <a href="#" class="menu-button-item hovered" id="quit-confirmation-save">Save and quit</a>
+            <a href="#" class="menu-button-item" id="quit-confirmation-save">Save and quit</a>
           </div>
         </div>
         <div class="col-sm-2 highlight-row-6 highlight-row-7">

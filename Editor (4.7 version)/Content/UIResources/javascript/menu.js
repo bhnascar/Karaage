@@ -1,5 +1,7 @@
 $( "#save-confirmation-container").hide();
 $( "#save-container").hide();
+$( "#load-container").hide();
+$( "#settings-container").hide();
 $( "#new-level-confirmation-container").hide();
 $( ".list-group-item:visible" ).first().addClass('active');
 
@@ -7,31 +9,35 @@ $( ".list-group-item:visible" ).first().addClass('active');
 $( "#new-level-menu-button" ).click(function( event ) {
   event.preventDefault();
   $("#main-menu-container").fadeOut(250, function() {
-    $(".list-group-item").removeClass('active');
-    $("#new-level-confirmation-container").delay(50).fadeIn(250, function() {
-      $(".list-group-item:visible").first().addClass('active');
-    });
+    $("#new-level-confirmation-container").delay(50).fadeIn(250);
   });
 });
 
 $( "#save-level-menu-button").click(function( event ) {
   event.preventDefault();
   $("#main-menu-container").fadeOut(250, function() {
-    $(".list-group-item").removeClass('active');
-    $("#save-container").delay(50).fadeIn(250, function () {
-      $("#file-name-input").focus();
-      $(".list-group-item:visible").first().addClass('active');
-    });
+    $("#save-container").delay(50).fadeIn(250);
+  });
+});
+
+$( "#load-level-menu-button").click(function( event ) {
+  event.preventDefault();
+  $("#main-menu-container").fadeOut(250, function() {
+    $("#load-container").delay(50).fadeIn(250);
+  });
+});
+
+$( "#settings-menu-button").click(function( event ) {
+  event.preventDefault();
+  $("#main-menu-container").fadeOut(250, function() {
+    $("#settings-container").delay(50).fadeIn(250);
   });
 });
 
 $( "#quit-menu-button" ).click(function( event ) {
   event.preventDefault();
   $("#main-menu-container").fadeOut(250, function() {
-    $(".list-group-item").removeClass('active');
-    $("#save-confirmation-container").delay(50).fadeIn(250, function() {
-      $(".list-group-item:visible").first().addClass('active');
-    });
+    $("#save-confirmation-container").delay(50).fadeIn(250);
   });
 });
 
@@ -39,11 +45,23 @@ $( "#quit-menu-button" ).click(function( event ) {
 $( "#save-cancel" ).click(function( event ) {
   event.preventDefault();
   $("#save-container").fadeOut(250, function() {
-    $(".list-group-item").removeClass('active');
-    $("#main-menu-container").delay(50).fadeIn(250, function() {
-      $("#file-name-input").val("");
-      $(".list-group-item:visible").first().addClass('active');
-    });
+    $("#main-menu-container").delay(50).fadeIn(250);
+  });
+});
+
+// Load menu
+$( "#load-cancel" ).click(function( event ) {
+  event.preventDefault();
+  $("#load-container").fadeOut(250, function() {
+    $("#main-menu-container").delay(50).fadeIn(250);
+  });
+});
+
+// Settings menu
+$( "#settings-cancel" ).click(function( event ) {
+  event.preventDefault();
+  $("#settings-container").fadeOut(250, function() {
+    $("#main-menu-container").delay(50).fadeIn(250);
   });
 });
 
@@ -51,10 +69,7 @@ $( "#save-cancel" ).click(function( event ) {
 $( "#new-level-confirmation-cancel" ).click(function( event ) {
   event.preventDefault();
   $("#new-level-confirmation-container").fadeOut(250, function() {
-    $(".list-group-item").removeClass('active');
-    $("#main-menu-container").delay(50).fadeIn(250, function() {
-      $(".list-group-item:visible").first().addClass('active');
-    });
+    $("#main-menu-container").delay(50).fadeIn(250);
   });
 });
 
@@ -62,28 +77,8 @@ $( "#new-level-confirmation-cancel" ).click(function( event ) {
 $( "#quit-confirmation-cancel" ).click(function( event ) {
   event.preventDefault();
   $("#save-confirmation-container").fadeOut(250, function() {
-    $(".list-group-item").removeClass('active');
-    $("#main-menu-container").delay(50).fadeIn(250, function() {
-      $(".list-group-item:visible").first().addClass('active');
-    });
+    $("#main-menu-container").delay(50).fadeIn(250);
   });
-});
-
-
-engine.on('3DMouseRotateX', function (argument) {
-  var menuCount = $(".list-group-item:visible").length;
-
-  var activeItem = $(".active");
-  var activeIndex = activeItem.parent().children().index(activeItem);
-
-  if (argument > 0.5) {
-    activeIndex = (activeIndex + 1) % menuCount;
-  }
-  else if(argument < -0.5) {
-    activeIndex = (activeIndex - 1 + menuCount) % menuCount;
-  }
-  $(".list-group-item").removeClass('active');
-  $(".list-group-item:visible").eq(activeIndex).addClass('active');
 });
 
 // Get row of item that is currently looked at

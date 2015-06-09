@@ -10,7 +10,7 @@ var originalCSS = {
   paddingRight: "30%"
 };
 var miniCSS = {
-  width: "50%",
+  width: "55%",
   marginTop: "30%",
   paddingLeft: "5%",
   paddingRight: "5%"
