@@ -4,7 +4,7 @@ $( "#load-container").hide();
 $( "#settings-container").hide();
 $( "#new-level-confirmation-container").hide();
 $( "#load-complete-container" ).hide();
-$( "#main-menu-container").hide();
+// $( "#main-menu-container").hide();
 
 // Main menu
 $( "#new-level-menu-button" ).click(function( event ) {
@@ -17,6 +17,16 @@ $( "#new-level-menu-button" ).click(function( event ) {
 $( "#save-level-menu-button").click(function( event ) {
   event.preventDefault();
   $("#main-menu-container").fadeOut(250, function() {
+    engine.trigger("Event Get Save Slot Metadata", "level1");
+    engine.trigger("Event Get Save Slot Metadata", "level2");
+    engine.trigger("Event Get Save Slot Metadata", "level3");
+    engine.trigger("Event Get Save Slot Metadata", "level4");
+    engine.trigger("Event Get Save Slot Metadata", "level5");
+    engine.trigger("Event Get Save Slot Metadata", "level6");
+    engine.trigger("Event Get Save Slot Metadata", "level7");
+    engine.trigger("Event Get Save Slot Metadata", "level8");
+    engine.trigger("Event Get Save Slot Metadata", "level9");
+    engine.trigger("Event Get Save Slot Metadata", "level10");
     $("#save-container").delay(50).fadeIn(250);
   });
 });
@@ -24,6 +34,16 @@ $( "#save-level-menu-button").click(function( event ) {
 $( "#load-level-menu-button").click(function( event ) {
   event.preventDefault();
   $("#main-menu-container").fadeOut(250, function() {
+    engine.trigger("Event Get Save Slot Metadata", "level1");
+    engine.trigger("Event Get Save Slot Metadata", "level2");
+    engine.trigger("Event Get Save Slot Metadata", "level3");
+    engine.trigger("Event Get Save Slot Metadata", "level4");
+    engine.trigger("Event Get Save Slot Metadata", "level5");
+    engine.trigger("Event Get Save Slot Metadata", "level6");
+    engine.trigger("Event Get Save Slot Metadata", "level7");
+    engine.trigger("Event Get Save Slot Metadata", "level8");
+    engine.trigger("Event Get Save Slot Metadata", "level9");
+    engine.trigger("Event Get Save Slot Metadata", "level10");
     $("#load-container").delay(50).fadeIn(250);
   });
 });
@@ -45,7 +65,7 @@ $( "#quit-menu-button" ).click(function( event ) {
 // Save as menu
 var saveFunction = function (index) {
   var currentDate = new Date(); 
-  var modifiedDate = "Last modified: " + currentDate.getDate() + "/"
+  var modifiedDate = "Modified: " + currentDate.getDate() + "/"
                   + (currentDate.getMonth()+1)  + "/" 
                   + currentDate.getFullYear() + " @ "  
                   + currentDate.getHours() + ":"  
@@ -293,6 +313,50 @@ engine.on('LevelLoaded', function() {
     });
   });
 });
+
+// Metadata loaded!
+engine.on('MetadataLoaded', function(levelName, metadata) {
+  if (levelName == 'level1') {
+    $("#load-level-modified-1").html(metadata);
+    $("#save-level-modified-1").html(metadata);
+  }
+  else if (levelName == 'level2') {
+    $("#load-level-modified-2").html(metadata);
+    $("#save-level-modified-2").html(metadata);
+  }
+  else if (levelName == 'level3') {
+    $("#load-level-modified-3").html(metadata);
+    $("#save-level-modified-3").html(metadata);
+  }
+  else if (levelName == 'level4') {
+    $("#load-level-modified-4").html(metadata);
+    $("#save-level-modified-4").html(metadata);
+  }
+  else if (levelName == 'level5') {
+    $("#load-level-modified-5").html(metadata);
+    $("#save-level-modified-5").html(metadata);
+  }
+  else if (levelName == 'level6') {
+    $("#load-level-modified-6").html(metadata);
+    $("#save-level-modified-6").html(metadata);
+  }
+  else if (levelName == 'level7') {
+    $("#load-level-modified-7").html(metadata);
+    $("#save-level-modified-7").html(metadata);
+  }
+  else if (levelName == 'level8') {
+    $("#load-level-modified-8").html(metadata);
+    $("#save-level-modified-8").html(metadata);
+  }
+  else if (levelName == 'level9') {
+    $("#load-level-modified-9").html(metadata);
+    $("#save-level-modified-9").html(metadata);
+  }
+  else if (levelName == 'level10') {
+    $("#load-level-modified-10").html(metadata);
+    $("#save-level-modified-10").html(metadata);
+  }
+})
 
 var counter = 0;
 setInterval(function() {
