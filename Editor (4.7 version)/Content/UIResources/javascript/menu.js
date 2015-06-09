@@ -3,7 +3,8 @@ $( "#save-container").hide();
 $( "#load-container").hide();
 $( "#settings-container").hide();
 $( "#new-level-confirmation-container").hide();
-$( ".list-group-item:visible" ).first().addClass('active');
+$( "#load-complete-container" ).hide();
+$( "#main-menu-container").hide();
 
 // Main menu
 $( "#new-level-menu-button" ).click(function( event ) {
@@ -42,6 +43,58 @@ $( "#quit-menu-button" ).click(function( event ) {
 });
 
 // Save as menu
+var saveFunction = function (index) {
+  var currentDate = new Date(); 
+  var modifiedDate = "Last modified: " + currentDate.getDate() + "/"
+                  + (currentDate.getMonth()+1)  + "/" 
+                  + currentDate.getFullYear() + " @ "  
+                  + currentDate.getHours() + ":"  
+                  + currentDate.getMinutes();
+
+  engine.trigger("Event Save Level", "level" + index, modifiedDate);
+};
+
+$( "#save-level-1").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(1);
+});
+$( "#save-level-2").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(2);
+});
+$( "#save-level-3").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(3);
+});
+$( "#save-level-4").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(4);
+});
+$( "#save-level-5").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(5);
+});
+$( "#save-level-6").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(6);
+});
+$( "#save-level-7").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(7);
+});
+$( "#save-level-8").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(8);
+});
+$( "#save-level-9").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(9);
+});
+$( "#save-level-10").click(function ( event ) {
+  event.preventDefault();
+  saveFunction(10);
+});
+
 $( "#save-cancel" ).click(function( event ) {
   event.preventDefault();
   $("#save-container").fadeOut(250, function() {
@@ -50,6 +103,51 @@ $( "#save-cancel" ).click(function( event ) {
 });
 
 // Load menu
+var loadFunction = function (index) {
+  engine.trigger("Event Load Level", "level" + index);
+};
+
+$( "#load-level-1").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(1);
+});
+$( "#load-level-2").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(2);
+});
+$( "#load-level-3").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(3);
+});
+$( "#load-level-4").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(4);
+});
+$( "#load-level-5").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(5);
+});
+$( "#load-level-6").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(6);
+});
+$( "#load-level-7").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(7);
+});
+$( "#load-level-8").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(8);
+});
+$( "#load-level-9").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(9);
+});
+$( "#load-level-10").click(function ( event ) {
+  event.preventDefault();
+  loadFunction(10);
+});
+
 $( "#load-cancel" ).click(function( event ) {
   event.preventDefault();
   $("#load-container").fadeOut(250, function() {
@@ -72,6 +170,14 @@ $( "#new-level-confirmation-cancel" ).click(function( event ) {
     $("#main-menu-container").delay(50).fadeIn(250);
   });
 });
+
+$( "#new-level-confirmation-discard" ).click(function ( event ) {
+  event.preventDefault();
+  engine.trigger("Event Clear Level");
+  $("#new-level-confirmation-container").fadeOut(250, function() {
+    engine.trigger("Event Hide Menu");
+  });
+})
 
 // Quit confirmation menu
 $( "#quit-confirmation-cancel" ).click(function( event ) {
@@ -157,10 +263,31 @@ engine.on('GazeInput', function(yPosition, xPosition) {
 
 // Click menu item
 engine.on('MenuClicked', function() {
-  engine.trigger("Clicking...");
   var activeItem = $(".hovered:visible");
 
   activeItem.click();
+});
+
+// When menu is shown
+engine.on('MenuVisibilityChanged', function( isShown ) {
+  if (isShown) {
+    $( "#save-confirmation-container").hide();
+    $( "#save-container").hide();
+    $( "#load-container").hide();
+    $( "#settings-container").hide();
+    $( "#new-level-confirmation-container").hide();
+    $( "#load-complete-container" ).hide();
+    $(" #main-menu-container").fadeIn();
+  }
+});
+
+// Load complete!
+engine.on('LevelLoaded', function() {
+  $("#load-container").fadeOut(250, function() {
+    $("#load-complete-container").delay(50).fadeIn(250, function() {
+      $("#load-complete-container").delay(2000).fadeOut();
+    });
+  });
 });
 
 var counter = 0;
