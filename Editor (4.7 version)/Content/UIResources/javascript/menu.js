@@ -4,7 +4,7 @@ $( "#load-container").hide();
 $( "#settings-container").hide();
 $( "#new-level-confirmation-container").hide();
 $( "#load-complete-container" ).hide();
-// $( "#main-menu-container").hide();
+$( "#main-menu-container").hide();
 
 // Main menu
 $( "#new-level-menu-button" ).click(function( event ) {
@@ -311,6 +311,15 @@ engine.on('LevelLoaded', function() {
   $("#load-container").fadeOut(250, function() {
     $("#load-complete-container").delay(50).fadeIn(250, function() {
       $("#load-complete-container").delay(2000).fadeOut();
+    });
+  });
+});
+
+// Load complete!
+engine.on('LevelSaved', function() {
+  $("#save-container").fadeOut(250, function() {
+    $("#save-complete-container").delay(50).fadeIn(250, function() {
+      $("#save-complete-container").delay(2000).fadeOut();
     });
   });
 });
