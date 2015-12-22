@@ -1,5 +1,5 @@
 # Karaage
-Project for CS210A/B. Prototype level editor built using Unreal Engine 4, in partnership with Epic Games. Please check out our project home site at www.karaage.io.
+Project for CS210A/B. Virtual-reality level editor built using Unreal Engine 4, in partnership with Epic Games. Please check out our project home site at www.karaage.io.
 
 This project is no longer in active development.
 
