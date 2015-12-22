@@ -1,6 +1,8 @@
 # Karaage
 Prototype level editor built as a game level using Unreal Engine 4. Please check out our project home site at www.karaage.io.
 
+This project is no longer in active development.
+
 ![alt tag](https://github.com/cs210/Karaage/blob/master/editor.png)
 
 ## Karaage Editor
@@ -33,13 +35,13 @@ Prototype level editor built as a game level using Unreal Engine 4. Please check
 1. Multiple select (by dragging a bounding volume)
 
 ### Goals
-1. ~~Recreate minimal editor functionality (enough for simple level design)~~
-2. ~~Integrate 3DConnexion Space Navigator support to test level design workflow with said device~~
-3. ~~Integrate Novint Falcon support and test level design workflow~~
-4. ~~Integrate mobile device object-manipulation support and test level design workflow~~
+1. Recreate minimal editor functionality (enough for simple level design)
+2. Integrate 3DConnexion Space Navigator support to test level design workflow with said device
+3. Integrate Novint Falcon support and test level design workflow
+4. Integrate mobile device object-manipulation support and test level design workflow
 5. Create functional menu for editor settings
 6. ~~Export created levels to UE4~~ (Deferred)
-7. ~~Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.~~
+7. Haptic feedback for Novint Falcon. Ex: Magnetic lines to guide axis-specific edits, haptic walls to guide precise object placement.
 
 ## Running the editor (without source build)
 The Karaage editor requires a 3DConnexion Space Navigator and Novint Falcon. If you don't have these devices already, you can buy a Space Navigator at the [3DConnexion store](http://www.3dconnexion.com/buy/shop.html) and a Falcon at the [Novint store](https://www.novint.com/index.php/store).
